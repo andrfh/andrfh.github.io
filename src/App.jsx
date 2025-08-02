@@ -64,7 +64,59 @@ function App() {
           </div>
         </div>
       </motion.section>
+
+      <motion.section className='main' id="about" onViewportEnter={(entry) => {console.log('home'); setActive('about')}} viewport={{ amount: 0.7 }}>
+        <div className="container">
+          <div className="main_wrapper">
+            <div className="main_me">
+              <h1>Солонович Андрей</h1>
+              <h4>Frontend Разработчик</h4>
+              <p>Создаю красивые и удобные в использовании интерфейсы</p>
+              <div className="main_me-skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Git</span>
+              </div>
+              <div className="main_me-btns">
+                <MainBtn text='Мои проекты' style='primary'/>
+                <MainBtn text="Связаться" style='ghost'/>
+              </div>
+            </div>
+            <div className="main_photo">
+              <img src={me} alt="" />
+            </div>
+          </div>
+        </div>
+      </motion.section>
     
+    <motion.section className='main' id="education" onViewportEnter={(entry) => {console.log('home'); setActive('edu')}} viewport={{ amount: 0.7 }}>
+        <div className="container">
+          <div className="main_wrapper">
+            <div className="main_me">
+              <h1>Солонович Андрей</h1>
+              <h4>Frontend Разработчик</h4>
+              <p>Создаю красивые и удобные в использовании интерфейсы</p>
+              <div className="main_me-skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Git</span>
+              </div>
+              <div className="main_me-btns">
+                <MainBtn text='Мои проекты' style='primary'/>
+                <MainBtn text="Связаться" style='ghost'/>
+              </div>
+            </div>
+            <div className="main_photo">
+              <img src={me} alt="" />
+            </div>
+          </div>
+        </div>
+      </motion.section>
+      
     </div>
   )
 }

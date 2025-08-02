@@ -26,9 +26,10 @@
 
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    width: 97%;
     height: 80px;
     background: rgba(15, 15, 25, 0.5); 
     backdrop-filter: blur(10px);      
@@ -38,6 +39,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 3; 
+    border-radius: 40px;
 }
 
 .header_wrapper {
