@@ -1,0 +1,9 @@
+.title {
+    margin-bottom: 40px !important;
+}
+
+.title_wrapper {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 1px 0 red;
+}

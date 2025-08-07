@@ -1,53 +1,60 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Inter, sans-serif;
-    scroll-behavior: smooth;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Inter, sans-serif !important;
+    scroll-behavior: smooth !important;
 }
 
 h1 {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
 }
 
 h2 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
 
 }
 
 h3 {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
 
 }
 
 h4 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
 
 }
 
 h5 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
 
 }
-h1, h2, h3, h4, h5, a, p, span {
-  color: var(--white);
-  text-decoration: none;
-  margin: 0;
+h1, h2, h3, h4, h5, a, p, span, li {
+  color: var(--white) !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+
 
 }
 
-p, a, span {
-  font-size: 0.875rem;
-  line-height: 0.875rem;
+a, span {
+  font-size: 0.875rem !important;
+  line-height: 0.875rem !important;
+}
+
+p {
+  font-size: 1rem !important;
+  line-height: 1rem !important;
+
 }
 
 :root {
@@ -58,5 +65,7 @@ p, a, span {
     --primary: #6654D3;
     --primary-gradient: linear-gradient(90deg, #4386f8 0%, #a84ef5 100%);
     --primary-hover-gradient: linear-gradient(90deg, #3478ec 0%, #a140f6 100%);
-
+    --green: #79EEA5;
+    --yellow: #FFDF20;
+    --red: #d60808;
 }

@@ -1,0 +1,194 @@
+.project {
+    background: #14151D !important; 
+    backdrop-filter: blur(10px)  !important;      
+    -webkit-backdrop-filter: blur(10px)  !important;
+    border-radius: 10px  !important;
+    width: 20rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+}
+
+.project:hover {
+    transform: scale(1.05);
+    transform-origin: center center;
+    box-shadow: 0 0 50px 5px #3c2f84;
+}
+
+.project:hover h5  {
+    color: var(--primary) !important;
+}
+
+
+.project_tags {
+    display: flex;
+    gap: 15px;
+}
+
+.project_body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px !important;
+}
+
+.project_body > p {
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    line-height: 1.3 !important;
+    overflow: hidden;
+    height: 62px;
+}
+
+.project_body > h5 {
+    transition: all 0.3s ease;
+}
+
+.tag {
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    color: var(--primary) !important;
+    font-size: 0.7rem !important;
+}
+
+.project_modal {
+    background: var(--header-bg) !important; 
+    padding: 30px !important;
+}
+
+.projects_info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.projects_info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}
+
+.projects_info-item {
+    display: flex;
+    gap: 5px;
+    opacity: 0.7;
+    align-items: center;
+}
+
+.project_info-go {
+    transition: all 0.3s ease;
+}
+
+.project:hover .project_info-go {
+    transform: translateX(7px);
+    transform-origin: center center;
+}
+
+.modal_header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.modal_header > img{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+.modal_photo {
+    max-width: 100%;
+    margin-top: 25px;
+    border-radius: 15px;
+
+}
+
+.project_modal > h5 {
+    margin: 25px 0 !important;
+}
+
+.project_modal > p {
+    opacity: 0.6;
+    line-height: 1.5 !important;
+}
+
+.project_modal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.project_modal::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+}
+
+.project_modal::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+li {
+    opacity: 0.7;
+}
+
+.feauteres > li::marker {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.solutions > li::marker {
+    color: var(--yellow);
+    font-size: 20px;
+}
+
+.project_modal-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.gh, .demo {
+    width: 40%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.gh {
+    background-color: #1a1a1a;
+}
+
+button > img {
+    height: 20px;
+    width: 20px;
+}
+
+.demo {
+    background: var(--primary-gradient);
+}
+
+.gh:hover {
+    transform: scale(1.05);
+    transform-origin: center center;
+    opacity: 1;
+}
+
+.demo:hover {
+    transform: scale(1.05);
+    transform-origin: center center;
+    opacity: 1;
+}
+
+
