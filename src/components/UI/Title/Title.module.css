@@ -1,9 +1,37 @@
 .title {
-    margin-bottom: 40px !important;
+    margin-bottom: 45px !important;
+    position: relative;
+    text-align: center;
+    display: inline-block;
 }
 
-.title_wrapper {
-    text-align: center;
-    width: 100%;
-    text-shadow: 0 0 1px 0 red;
+
+.title > h2::before {
+    max-width: 1000px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250%;
+    height: 100%;
+    background: var(--primary-gradient);
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: glowPulse 5s ease-in-out infinite;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.title > h5 {
+  margin-top: 10px !important;
+  opacity: 0.6;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
 }

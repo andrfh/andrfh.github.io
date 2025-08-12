@@ -11,7 +11,7 @@ const ProjectCard = ({project}) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <CCard className='project' >
+        <CCard className='project' data-aos="flip-left" data-aos-duration="1000" >
             <span  onClick={()=>{setIsOpen(true)}}>
                 <CCardImage orientation="top" src={project.photo}/>
                 <CCardBody className='project_body'>
