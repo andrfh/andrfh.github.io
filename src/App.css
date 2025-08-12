@@ -93,11 +93,53 @@
     justify-content: space-between;
 }
 
+.header_wrapper >h4 {
+    font-weight: 600 !important;
+}
+
 .header_navbar {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
+
+.header_burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    opacity: 0.7;  
+    background-color: var(--header-nav);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.header_burger:hover {
+    opacity: 1;  
+    text-align: center;
+    transform: scale(1.05);
+    transform-origin: center center;
+}
+
+#offcanvasNavbar {
+    background: var(--header-bg) !important; 
+    padding: 30px !important;
+}
+
+.header_navbar-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: start;
+}
+
+.text-reset {
+    color: white !important;
+}
+
+
 
 
 
@@ -606,5 +648,251 @@
 .footer > p {
     font-size: 0.8rem !important;
     opacity: 0.5;
+
+}
+
+.last_section {
+        position: relative;
+    }
+
+/* Смартфоны */
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 440px;
+        width: 440px;
+        margin: 0 auto;
+    }
+
+    .header_navbar {
+        display: none;
+    }
+
+    .header_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header_burger {
+        display: flex;
+        position: absolute;
+        right: 15px;
+    }
+
+    .main_wrapper {
+        flex-direction:column-reverse;
+        justify-content: center;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .main_photo>img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .main_photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .section {
+        height: 150vh;
+    }
+
+    .main_me-name {
+        font-size: 2.5rem !important;
+    }
+    .main_me > h4 {
+        margin-top: 15px !important;
+        font-size: 1.5rem !important;
+    }
+    .main_me > p {
+        font-size: 1rem !important;
+    }
+
+    .main_me-btns {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main_me-skills {
+        justify-content: center;
+    }
+    
+    .about {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .about > p {
+
+        font-size: 0.8rem !important;
+    }
+
+    .education_main {
+        padding: 10px;
+    }
+
+    .education_main > h4 {
+        font-size: 1rem !important;
+    }
+
+    .education_texts > h5 {
+        font-size: 1rem !important;
+    }
+
+    .education_texts > p {
+        font-size: 0.7rem !important;
+    }
+
+    .education {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .education > span {
+        font-size: 0.7rem !important;
+    }
+
+    .education_center > h4 {
+        font-size: 1rem !important;
+    }
+
+    .contacts_blocks {
+        flex-direction: column;
+    }
+
+    .contacts_sources, .contacts_work, .contacts_work-preferences  {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    
+
+}
+
+/* Планшеты */
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .container {
+        max-width: 740px;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+    .header_navbar {
+        display: none;
+    }
+
+    .header_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header_burger {
+        display: flex;
+        position: absolute;
+        right: 45px;
+    }
+
+    .main_wrapper {
+        flex-direction:column-reverse;
+        justify-content: center;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .main_photo>img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .main_photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .main_me-skills {
+        justify-content: center;
+    }
+
+    .section {
+        height: 130vh;
+    }
+
+    .main_me-name {
+        font-size: 2.5rem !important;
+    }
+    .main_me > h4 {
+        margin-top: 15px !important;
+        font-size: 1.5rem !important;
+    }
+    .main_me > p {
+        font-size: 1rem !important;
+    }
+
+    .main_me-btns {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .about > p {
+
+        font-size: 0.8rem !important;
+    }
+
+    .education_main {
+        padding: 10px;
+    }
+
+    .education_main > h4 {
+        font-size: 1rem !important;
+    }
+
+    .education_texts > h5 {
+        font-size: 1rem !important;
+    }
+
+    .education_texts > p {
+        font-size: 0.7rem !important;
+    }
+
+    .education {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .education > span {
+        font-size: 0.7rem !important;
+    }
+
+    .education_center > h4 {
+        font-size: 1rem !important;
+    }
+
+    .contacts_blocks {
+        flex-direction: column;
+    }
+
+    .contacts_sources, .contacts_work, .contacts_work-preferences  {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    
 
 }

@@ -12,14 +12,25 @@ import fgmail from './pictures/footer-gmail.svg'
 import fwhatsapp from './pictures/footer-whatsapp.svg'
 import arrowTop from './pictures/arrow-top.svg'
 import fcv from './pictures/cv.svg'
+import menu from './pictures/menu.svg'
 import './App.css'
 import { useState } from "react"
 import StarsBg from './components/StarsBg/StarsBg'
-import EducationCard from './components/UI/EducationCard/EducationCard'
-
+import {
+  CCloseButton,
+  CNavbarNav,
+  CNavbarToggler,
+  CNavItem,
+  CNavLink,
+  COffcanvas,
+  COffcanvasBody,
+  COffcanvasHeader,
+  COffcanvasTitle,
+} from '@coreui/react'
 function App() {
   const [active, setActive] = useState('home')
   const [showButton, setShowButton] = useState(false);
+  const [visible, setVisible] = useState(false)
 
 
   const courses = [{
@@ -153,7 +164,7 @@ function App() {
       }}
        href="#home" className="top-button"><img src={arrowTop} alt="" /></motion.a>
       {/* хэдэр */}
-
+        
       <header className="header">
         <div className="container">
           <div className="header_wrapper">
@@ -166,9 +177,33 @@ function App() {
               <HeaderNav href="#portfolio" text='Портфолио' isActive={active == 'portfolio' ? true : ''}/>
               <HeaderNav href="#contacts" text='Контакты' isActive={active == 'contacts' ? true : ''}/>
             </nav>
+            <button className="header_burger" onClick={() => setVisible(!visible)}><img src={menu} alt="" /></button>
+            
           </div>
         </div>
       </header>
+      <COffcanvas
+          id="offcanvasNavbar"
+          placement="end"
+          portal={false}
+          visible={visible}
+          onHide={() => setVisible(false)}
+        >
+          <COffcanvasHeader>
+            <COffcanvasTitle>Мое портфолио</COffcanvasTitle>
+            <CCloseButton className="text-reset" white='true' onClick={() => setVisible(false)} />
+          </COffcanvasHeader>
+          <COffcanvasBody>
+            <nav className="header_navbar-modal">
+              <HeaderNav href="#home" text='Главная' isActive={active == 'home' ? true : ''}/>
+              <HeaderNav href="#about" text='Обо мне' isActive={active == 'about' ? true : ''}/>
+              <HeaderNav href="#education" text='Образование' isActive={active == 'edu' ? true : ''}/>
+              {/* <HeaderNav href="#expirience" text='Опыт' isActive={active == 'portfolio' ? true : ''}/> */}
+              <HeaderNav href="#portfolio" text='Портфолио' isActive={active == 'portfolio' ? true : ''}/>
+              <HeaderNav href="#contacts" text='Контакты' isActive={active == 'contacts' ? true : ''}/>
+            </nav>
+          </COffcanvasBody>
+        </COffcanvas>
       <motion.section className='section' id="home" onViewportEnter={() => {setActive('home'); setShowButton(false)}} viewport={{ amount: 0.7 }}>
         <div className="container">
           <div className="main_wrapper">
@@ -256,7 +291,7 @@ function App() {
         </div>
       </motion.section>
 
-      <motion.section className='section' id="contacts" onViewportEnter={() => {setActive('contacts')}} viewport={{ amount: 0.7 }}>
+      <motion.section className='section last_section' id="contacts" onViewportEnter={() => {setActive('contacts')}} viewport={{ amount: 0.7 }}>
         <div className="contacts_section-wrapper">
           <div className="container">
             <div className="contacts_wrapper">
@@ -298,13 +333,12 @@ function App() {
                 </div>
             </div>
           </div>
-          <footer className='footer'>
+          
+        </div>
+        <footer className='footer'>
                 <h5>© 2025 Андрей. Сделано с ❤️ и современными технологиями</h5>
                 <p>React • Aos-animate • Motion</p>
           </footer>
-        </div>
-        
-
       </motion.section>
     
     
