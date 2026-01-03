@@ -3,7 +3,7 @@ import HeaderNav from './components/UI/HeaderNav/HeaderNav'
 import MainBtn from './components/UI/MainBtn/MainBtn'
 import Title from "./components/UI/Title/Title"
 import ProjectCard from './components/UI/ProjectCard/ProjectCard'
-import me from './pictures/me2.jpg'
+import me from './pictures/me.jpg'
 import kip from './pictures/kip.jpg'
 import reactPicture from './pictures/react.jpg'
 import ftelegram from './pictures/footer-tg.svg'
@@ -16,6 +16,7 @@ import menu from './pictures/menu.svg'
 import './App.css'
 import { useState } from "react"
 import StarsBg from './components/StarsBg/StarsBg'
+import CourseCard from './components/UI/CourseCard/CourseCard'
 import {
   CCloseButton,
   CNavbarNav,
@@ -27,112 +28,20 @@ import {
   COffcanvasHeader,
   COffcanvasTitle,
 } from '@coreui/react'
+
+import courses from './data/courses'
+import projects from './data/projects'
+
+
+
+
 function App() {
   const [active, setActive] = useState('home')
   const [showButton, setShowButton] = useState(false);
   const [visible, setVisible] = useState(false)
 
 
-  const courses = [{
-    photo: '👨‍💻',
-    title: 'React.js',
-    description: 'Разработка веб-страниц при помощи React',
-    status: {
-      class: 'finished',
-      text: 'Завершен'
-    }
-  },
-  {
-    photo: '👨‍💻',
-    title: 'React.js',
-    description: 'Разработка веб-страниц при помощи React',
-    status: {
-      class: 'finished',
-      text: 'Завершен'
-    }
-  },
-  {
-    photo: '👨‍💻',
-    title: 'React.js',
-    description: 'Разработка веб-страниц при помощи React',
-    status: {
-      class: 'processed',
-      text: 'В процессе'
-    }
-  },
-  {
-    photo: '👨‍💻',
-    title: 'React.js',
-    description: 'Разработка веб-страниц при помощи React',
-    status: {
-      class: 'processed',
-      text: 'В процессе'
-    }
-  }]
-
-    const projects = [{
-        photo: reactPicture,
-        title: 'To-do лист',
-        description: 'A modern e-commerce platform built with React and styled-components. Features include product filtering, shopping cart, and responsive design.',
-        tags: ['React', 'Css', 'TypeScript'],
-        full_description: 'A comprehensive weather dashboard that provides detailed meteorological information with stunning visualizations. This project demonstrates proficiency in API integration, data visualization, and creating intuitive user interfaces. The application fetches real-time weather data and presents it through interactive charts and graphs, making complex weather patterns easy to understand.',
-        key_feauteres: [
-          'Real-time weather data from multiple reliable weather APIs',
-          'Interactive charts showing temperature trends, humidity, and pressure',
-          'Geolocation-based automatic weather detection',
-          '7-day detailed weather forecast with hourly breakdowns',
-          'Customizable dashboard with drag-and-drop widget arrangement'
-        ],
-        solutions: [
-          'Handling multiple API endpoints and managing data consistency',
-          'Creating responsive charts that work well on mobile devices',
-          'Implementing efficient caching to minimize API calls and improve performance',
-          'Designing an intuitive interface that presents complex data clearly'
-        ],
-        gallery: [reactPicture, kip, reactPicture]
-      },
-      {
-        photo: kip,
-        title: 'Калькулятор',
-        description: 'Что тут еще добавить? ',
-        tags: ['Vue.js', 'Nust.js', 'JavaScript'],
-        full_description: 'A comprehensive weather dashboard that provides detailed meteorological information with stunning visualizations. This project demonstrates proficiency in API integration, data visualization, and creating intuitive user interfaces. The application fetches real-time weather data and presents it through interactive charts and graphs, making complex weather patterns easy to understand.',
-        key_feauteres: [
-          'Real-time weather data from multiple reliable weather APIs',
-          'Interactive charts showing temperature trends, humidity, and pressure',
-          'Geolocation-based automatic weather detection',
-          '7-day detailed weather forecast with hourly breakdowns',
-          'Customizable dashboard with drag-and-drop widget arrangement'
-        ],
-        solutions: [
-          'Handling multiple API endpoints and managing data consistency',
-          'Creating responsive charts that work well on mobile devices',
-          'Implementing efficient caching to minimize API calls and improve performance',
-          'Designing an intuitive interface that presents complex data clearly'
-        ],
-        gallery: [reactPicture, kip, reactPicture]
-      },
-      {
-        photo: reactPicture,
-        title: 'Diary of Jane',
-        description: 'Something`s getting in the way. Something`s just about to brake',
-        tags: ['React', 'HTML', 'JavaScript'],
-        full_description: 'A comprehensive weather dashboard that provides detailed meteorological information with stunning visualizations. This project demonstrates proficiency in API integration, data visualization, and creating intuitive user interfaces. The application fetches real-time weather data and presents it through interactive charts and graphs, making complex weather patterns easy to understand.',
-        key_feauteres: [
-          'Real-time weather data from multiple reliable weather APIs',
-          'Interactive charts showing temperature trends, humidity, and pressure',
-          'Geolocation-based automatic weather detection',
-          '7-day detailed weather forecast with hourly breakdowns',
-          'Customizable dashboard with drag-and-drop widget arrangement'
-        ],
-        solutions: [
-          'Handling multiple API endpoints and managing data consistency',
-          'Creating responsive charts that work well on mobile devices',
-          'Implementing efficient caching to minimize API calls and improve performance',
-          'Designing an intuitive interface that presents complex data clearly'
-        ],
-        gallery: [reactPicture, kip, reactPicture]
-      }]
+  
 
  
 
@@ -209,7 +118,7 @@ function App() {
           <div className="main_wrapper">
             <div className="main_me" data-aos="fade-right" data-aos-duration="1500">
               <h1 className='main_me-name'>Солонович Андрей</h1>
-              <h4>Frontend Разработчик</h4>
+              <h4>Web Разработчик</h4>
               <p>Создаю красивые и удобные в использовании интерфейсы</p>
               <div className="main_me-skills">
                 <span>HTML</span>
@@ -247,27 +156,11 @@ function App() {
         <div className="container">
           <div className="education_wrapper">
             <Title text="Образование" subtitle='Где я учился и получал знания'/>
-            <div className="education_main" data-aos="fade-down" data-aos-duration="1500">
-              <h4>👨‍💻</h4>
-                <div className="education_texts">
-                  <h5>Колледж информатики и программирования Финансового университета при Правительстве Российской Федерации</h5>
-                  <p>Обеспечение информационной безопасности автоматизированных систем</p>
-                  <p className="education_years">2022-2026</p>
-                </div>
-            </div>
+            <CourseCard isMain={true}/>
             <div className="education_courses">
               {courses.map(item => {
                 return (
-                  <div className="education" data-aos="fade-down" data-aos-duration="1000">
-                      <div className="education_center">
-                        <h4>{item.photo}</h4>
-                        <div className="education_texts">
-                          <h5>{item.title}</h5>
-                          <p>{item.description}</p>
-                        </div>
-                      </div>
-                      <span className={item.status.class}>{item.status.text}</span>
-                  </div>
+                  <CourseCard course={item} isMain={false}/>
                 )
               })}
             </div>
@@ -302,7 +195,7 @@ function App() {
                     <div className="contacts_sources-links">
                       <a href="https://t.me/andrfh"><img src={ftelegram} alt="" />Telegram</a>
                       <a href="https://github.com/andrfh"><img src={fgithub} alt="" />GitHub</a>
-                      <a href=""><img src={fwhatsapp} alt="" />8-903-618-05-39</a>
+                      <a href="../"><img src={fwhatsapp} alt="" />8-903-618-05-39</a>
                       <a href="https://andrew.solonov@gmail.com"><img src={fgmail} alt="" />andrew.solonov@gmail.com</a>
                       <a href="https://hh.ru/resume/0aeb1427ff0cbaa0070039ed1f383642636e7a"><img src={fcv} alt="" />Резюме на hh.ru</a>
                     </div>
@@ -310,7 +203,7 @@ function App() {
                   <div className="contacts_work" >
                     <div className="contacts_work-cv" data-aos="fade-down" data-aos-duration="1000">
                       <h5>Скачать резюме</h5>
-                      <a>Скачать (PDF)</a>
+                      <a href="CV.pdf" download>Скачать (PDF)</a>
                     </div>
                     <div className="contacts_work-preferences" data-aos="fade-up" data-aos-duration="1000">
                       <h5>Рабочие предпочтения</h5>
@@ -323,7 +216,7 @@ function App() {
                         <div className="preferences_wrapper-right">
                           <p>Офисный / Гибрид / Удаленно</p>
                           <p>Москва, GMT+3</p>
-                          <p>Готов</p>
+                          <p>Обсуждается</p>
                         </div>
                       </div>
                     </div>
@@ -336,9 +229,9 @@ function App() {
           
         </div>
         <footer className='footer'>
-                <h5>© 2025 Андрей. Сделано с ❤️ и современными технологиями</h5>
-                <p>React • Aos-animate • Motion</p>
-          </footer>
+            <h5>© 2025 Андрей. Сделано с ❤️ и современными технологиями</h5>
+            <p>React • Aos-animate • Motion</p>
+        </footer>
       </motion.section>
     
     

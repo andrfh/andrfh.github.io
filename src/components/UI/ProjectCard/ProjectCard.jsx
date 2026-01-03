@@ -13,25 +13,25 @@ const ProjectCard = ({project}) => {
     return (
         <CCard className='project' data-aos="flip-left" data-aos-duration="1000" >
             <span  onClick={()=>{setIsOpen(true)}}>
-                <CCardImage orientation="top" src={project.photo}/>
+                <CCardImage orientation="top" src={project.photo} height={200}/>
                 <CCardBody className='project_body'>
                     <h5>{project.title}</h5>
                     <p>{project.description}</p>
                     <div className="project_tags">
-                        {project.tags.map(item => {
+                        {project.tags.slice(0,3).map(item => {
                             return <span className='tag'>{item}</span>
                         })}
                     </div>
                     <div className="projects_info">
                         <div className="projects_info-wrapper">
-                            <div className="projects_info-item">
+                            {project.source.github ? <div className="projects_info-item">
                                 <img src={github} alt="" />
                                 <p>Code</p>
-                            </div>
-                            <div className="projects_info-item">
+                            </div> : <></>}
+                            {project.source.demo ? <div className="projects_info-item">
                                 <img src={link} alt="" />
                                 <p>Demo</p>
-                            </div>
+                            </div> : <></>}
                         </div>
                         <img className='project_info-go' src={arrow} alt="" />
                     </div>
@@ -86,8 +86,8 @@ const ProjectCard = ({project}) => {
                         
                     </CCarousel>
                     <div className="project_modal-btns">
-                        <button className="gh"> <img src={github} alt="" />Посмотреть код</button>
-                        <button className="demo"><img src={link} alt="" />Демо-версия</button>
+                        {project.source.github ? <a href={project.source.github} className="gh"> <img src={github} alt="" />Посмотреть код</a> : <></>}
+                        {project.source.demo ? <a href={project.source.demo} className="demo"><img src={link} alt="" />Демо-версия</a> : <></>}
                     </div>
                 </CModalBody>
  

@@ -38,7 +38,6 @@
 }
 
 
-
 /*__________________________ header container __________________________ */
 
 
@@ -168,12 +167,15 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 35px var(--primary);
+    overflow: hidden;
+
 }
 
 .main_photo > img {
-    max-width: 400px;
-    max-height: 400px;
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
     border-radius: 75px;
+    object-fit: cover;
 }
 
 .main_me > h4 {
@@ -306,138 +308,6 @@
     margin: 0 40px;
 }
 
-.education_main > h4 {
-    padding: 20px;
-    border-radius: 50%;
-    background: rgba(27, 27, 44, 0.5); 
-    backdrop-filter: blur(5px);      
-    -webkit-backdrop-filter: blur(5px);
-}
-
-.education_center > h4 {
-    padding: 20px;
-    border-radius: 50%;
-    background: rgba(35, 35, 47, 0.5); 
-    backdrop-filter: blur(10px);      
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.education_texts {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-}
-
-.education_texts > h5 {
-    font-weight: 600;
-}
-
-.education_texts > p {
-    opacity: 0.7;   
-}
-
-.education_years {
-    opacity: 0.4 !important;
-}
-
-.education_main {
-    padding: 20px;
-    margin-bottom: 45px;
-    background: rgba(27, 27, 44, 0.5); 
-    backdrop-filter: blur(10px);      
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba(149, 148, 148, 0.403);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-.education_courses {
-    display: flex;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 35px;
-}
-
-
-.education_center {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.education {
-    width: 48%;
-    padding: 20px;
-    background: rgba(27, 27, 44, 0.5); 
-    backdrop-filter: blur(5px);      
-    -webkit-backdrop-filter: blur(5px);
-    display: flex;
-    gap: 30px;
-    align-items: start;
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba(149, 148, 148, 0.403);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-.education:hover {
-    opacity: 1 !important;
-    transition: all 0.3s ease !important;
-    transform: scale(1.04) !important;
-    transform-origin: center center !important;
-}
-
-.education_main:hover{
-    opacity: 1 !important;
-    transition: all 0.3s ease !important;
-    transform: scale(1.02) !important;
-    transform-origin: center center !important;
-}
-
-.finished {
-    border: 1px solid var(--green);
-    background-color: #79eea650;
-    padding: 5px 10px;
-    border-radius: 10px;
-    color: var(--green);
-    font-size: 0.875rem;
-
-}
-
-.processed {
-    border: 1px solid var(--yellow);
-    background-color: #FFDF2050;
-    padding: 5px 10px;
-    text-wrap: nowrap;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    color: var(--yellow);
-}
-
-.stopped {
-    border: 1px solid var(--red);
-    background-color: #d6080850;
-    padding: 5px 10px;
-    text-wrap: nowrap;
-    border-radius: 10px;
-    font-size: 0.875rem;
-    color: var(--red);
-}
-
 /*__________________________ portfolio container __________________________ */
 
 
@@ -454,7 +324,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 35px;
 }
 
@@ -657,10 +527,9 @@
 
 /* Смартфоны */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .container {
-        max-width: 400px;
-        width: 400px;
+        width: 100%;
         margin: 0 auto;
         text-wrap: wrap;
     }
@@ -668,13 +537,13 @@
     .main_me > h1 {
         text-wrap: wrap;
     }
-}
 
+    .section {
+        margin-top: 400px;
+    }
 
-@media (max-width: 480px) {
     .container {
-        max-width: 440px;
-        width: 440px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -773,6 +642,10 @@
         font-size: 1rem !important;
     }
 
+    .education_wrapper {
+        margin: 0;
+    }
+
     .contacts_blocks {
         flex-direction: column;
     }
@@ -792,12 +665,16 @@
 /* Планшеты */
 
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 1024px) {
     .container {
         max-width: 740px;
         width: 100%;
         margin: 0 auto;
 
+    }
+
+    .section {
+        margin-top: 200px;
     }
 
     .header_navbar {
