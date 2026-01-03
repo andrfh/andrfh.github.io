@@ -330,9 +330,15 @@
 
 
 /*__________________________ contacts container __________________________ */
+#contacts {
+    height: 100%;
+}
+
+.contacts_blocks {
+    margin-bottom: 100px;
+}
 
 .contacts_section-wrapper {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,8 +504,6 @@
 
 
 .footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     padding: 50px 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgb(0, 0, 0) 100%);
@@ -538,13 +542,23 @@
         text-wrap: wrap;
     }
 
-    #portfolio, #contacts {
+    #education {
+        margin-top: 200px;
+    }
+
+    #portfolio {
+        margin-top: 400px;
+    }
+
+    #contacts {
         margin-top: 300px;
     }
-    
-    .contacts_blocks {
-        margin-bottom: 100px;
+
+    #education, #portfolio {
+        height: 120vh;
     }
+
+
 
     .container {
         width: 100%;
@@ -581,10 +595,6 @@
     .main_photo {
         width: 260px;
         height: 260px;
-    }
-
-    .section {
-        height: 120vh;
     }
 
     .main_me-name {
@@ -676,10 +686,14 @@
         margin: 0 auto;
 
     }
-/* 
-    .section {
-        margin-top: 200px;
-    } */
+
+    #education, #portfolio {
+        height: 130vh;
+    }
+
+    #portfolio, #contacts {
+        margin-top: 150px;
+    }
 
     .header_navbar {
         display: none;
@@ -715,10 +729,6 @@
 
     .main_me-skills {
         justify-content: center;
-    }
-
-    .section {
-        height: 130vh;
     }
 
     .main_me-name {
