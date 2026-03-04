@@ -10,7 +10,37 @@ import cvHome from '../pictures/cv/home.png'
 import cvEdu from '../pictures/cv/edu.png'
 import cvContacts from '../pictures/cv/contacts.png'
 
-const projects = [{
+import rateshome from '../pictures/rates/home.jpg'
+import ratesPage from '../pictures/rates/rate.jpg'
+import ratesPage2 from '../pictures/rates/rate2.jpg'
+
+const projects = [
+      {
+          photo: rateshome,
+          title: 'Синхронизация валют',
+          description: 'Сайт для просмотра курсов иностранных валют к Рублю из ЦБ РФ',
+          tags: ['recharts', 'PostgreSQL', 'TanStack Query', 'Express.js', 'React'],
+          full_description: 'Fullstack приложение, которое вручную или по расписанию каждый день в 18:00 запрашивает данные из ЦБ РФ и обновляет в собственной БД. На сайте отображаются последние сохраненные курсы валют. \n Внимание! На публичном сайте данные автоматически не обновляются в связи с ограничениями по тарифу на хостинге (не работает cron).',
+          key_feauteres: [
+            'Полноценное API с crud-операциями для каждой сущности',
+            'CRON синхронизации с ЦБ',
+            'Интеграция API на сайт',
+            'График цены recharts на странице курса '
+          ],
+          solutions: [
+            'Данные не запрашиваются каждый раз напрямую в ЦБ, а копируются в БД для использования на сайте',
+            'Курсы запрашиваются автоматически в 18 часов каждого дня, т.к. в это время, в рабочие дни, ЦБ обновляет цены ',
+            'Запросы на backend написаны напрямую через fetch',
+            'На сайте присутствует удобный график, написанный при помощи recharts',
+            'Сайт адаптивен под все устройства, а также имеет лоудеры'
+          ],
+          gallery: [rateshome, ratesPage, ratesPage2],
+          source: {
+            github:"https://github.com/andrfh/CourseSync",
+            demo: "https://ratesexchange.vercel.app/"
+          }
+        },
+        {
         photo: journalHome,
         title: 'Journal-list',
         description: 'Учебный проект сайта с заметками.',
@@ -69,8 +99,7 @@ const projects = [{
           'Красивый дизайн (из-за звездочек на фоне)',
           'Понятная и простая структура контента',
           'Навигация по сайту',
-          'Анимации различных элементов',
-          'Glassmorphism 💅💅💅'
+          'Анимации различных элементов'
         ],
         solutions: [
           'Были использованы компоненты модальных окон и навигационной панели из библиотеки CoreUi',
@@ -85,6 +114,7 @@ const projects = [{
           demo: "https://andrfh.github.io"
         }
       }
+      
     ]
 
 export default projects

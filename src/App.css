@@ -324,8 +324,13 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 35px;
+}
+
+.portfolio_expand-btn {
+    margin-top: 25px;
+    align-self: center;
 }
 
 

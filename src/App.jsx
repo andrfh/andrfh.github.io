@@ -39,6 +39,10 @@ function App() {
   const [active, setActive] = useState('home')
   const [showButton, setShowButton] = useState(false);
   const [visible, setVisible] = useState(false)
+  const [isProjectsExpanded, setIsProjectsExpanded] = useState(false)
+
+  const visibleProjects = isProjectsExpanded ? projects : projects.slice(0, 3)
+  const shouldShowExpandButton = projects.length > 3 && !isProjectsExpanded
 
 
   
@@ -173,13 +177,21 @@ function App() {
           <div className="portfolio_wrapper">
             <Title text="Портфолио"  subtitle='Что реализовал и какие проблемы решил'/>
             <div className="portfolio">
-              {projects.map(item => {
+              {visibleProjects.map((item, index) => {
                 return (
-                  <ProjectCard project={item}/>
+                  <ProjectCard key={`${item.title}-${index}`} project={item}/>
                 )
               })}
-              
             </div>
+            {shouldShowExpandButton && (
+              <div className="portfolio_expand-btn">
+                <MainBtn
+                  text='Развернуть'
+                  style='primary'
+                  onClick={() => setIsProjectsExpanded(true)}
+                />
+              </div>
+            )}
           </div>
         </div>
       </motion.section>
