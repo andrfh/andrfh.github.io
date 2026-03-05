@@ -172,9 +172,9 @@ function App() {
         </div>
       </motion.section>
 
-      <motion.section className='section' id="portfolio" onViewportEnter={() => {setActive('portfolio')}} viewport={{ amount: 0.7 }}>
+      <motion.section className={`section portfolio_section ${isProjectsExpanded ? 'portfolio_section-expanded' : ''}`} id="portfolio" onViewportEnter={() => {setActive('portfolio')}} viewport={{ amount: 0.7 }}>
         <div className="container">
-          <div className="portfolio_wrapper">
+          <div className={`portfolio_wrapper ${isProjectsExpanded ? 'portfolio_wrapper-expanded' : ''}`}>
             <Title text="Портфолио"  subtitle='Что реализовал и какие проблемы решил'/>
             <div className="portfolio">
               {visibleProjects.map((item, index) => {
