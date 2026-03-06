@@ -194,5 +194,19 @@ button > img {
     opacity: 1;
 }
 
+@media (max-width: 480px) {
+    .project_modal .project_tags {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
+    .project_modal-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .gh, .demo {
+        width: 100%;
+    }
+}
 

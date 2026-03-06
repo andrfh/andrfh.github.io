@@ -16,8 +16,8 @@
 }
 
 .container {
-    max-width: 1200px;
-    width: 1200px;
+    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
 }
 
@@ -340,8 +340,16 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 35px;
+    justify-content: space-between;
+    row-gap: 35px;
+    gap: auto
+}
+
+.portfolio > .project {
+    flex: 0 0 20rem;
+    width: 20rem;
+    max-width: 20rem;
+    min-width: 320px;
 }
 
 .portfolio_expand-btn {
@@ -556,6 +564,7 @@
     .container {
         width: 100%;
         margin: 0 auto;
+        padding: 0 16px;
         text-wrap: wrap;
     }
     
@@ -596,8 +605,10 @@
         justify-content: center;
     }
 
-    .project {
+    .portfolio > .project {
+        flex: 0 1 min(20rem, 100%);
         width: min(20rem, 100%);
+        min-width: 0;
     }
 
 
@@ -723,9 +734,10 @@
 
 @media (min-width: 480px) and (max-width: 1024px) {
     .container {
-        max-width: 740px;
-        width: 100%;
+        max-width: 800px;
+        width: min(800px, 100%);
         margin: 0 auto;
+        padding: 0 16px;
 
     }
 
@@ -854,4 +866,25 @@
 
     
 
+}
+
+@media (max-width: 790px) {
+    .portfolio {
+        justify-content: center;
+        row-gap: 35px;
+    }
+
+    .portfolio > .project {
+        flex: 0 1 min(20rem, 100%);
+        width: min(20rem, 100%);
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1200px;
+        width: 1200px;
+        margin: 0 auto;
+    }
 }

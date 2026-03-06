@@ -14,7 +14,7 @@ import arrowTop from './pictures/arrow-top.svg'
 import fcv from './pictures/cv.svg'
 import menu from './pictures/menu.svg'
 import './App.css'
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import StarsBg from './components/StarsBg/StarsBg'
 import CourseCard from './components/UI/CourseCard/CourseCard'
 import {
@@ -40,9 +40,30 @@ function App() {
   const [showButton, setShowButton] = useState(false);
   const [visible, setVisible] = useState(false)
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false)
+  const [projectsPerRow, setProjectsPerRow] = useState(1)
+  const portfolioRef = useRef(null)
 
-  const visibleProjects = isProjectsExpanded ? projects : projects.slice(0, 3)
-  const shouldShowExpandButton = projects.length > 3 && !isProjectsExpanded
+  useEffect(() => {
+    const CARD_MIN_WIDTH = 320
+
+    const calculateProjectsPerRow = () => {
+      if (!portfolioRef.current) return
+
+      const containerWidth = portfolioRef.current.clientWidth
+      const count = Math.max(1, Math.floor(containerWidth / CARD_MIN_WIDTH))
+      setProjectsPerRow(count)
+    }
+
+    calculateProjectsPerRow()
+    window.addEventListener('resize', calculateProjectsPerRow)
+
+    return () => {
+      window.removeEventListener('resize', calculateProjectsPerRow)
+    }
+  }, [])
+
+  const visibleProjects = isProjectsExpanded ? projects : projects.slice(0, projectsPerRow)
+  const shouldShowExpandButton = projects.length > projectsPerRow && !isProjectsExpanded
 
 
   
@@ -176,7 +197,7 @@ function App() {
         <div className="container">
           <div className={`portfolio_wrapper ${isProjectsExpanded ? 'portfolio_wrapper-expanded' : ''}`}>
             <Title text="Портфолио"  subtitle='Что реализовал и какие проблемы решил'/>
-            <div className="portfolio">
+            <div className="portfolio" ref={portfolioRef}>
               {visibleProjects.map((item, index) => {
                 return (
                   <ProjectCard key={`${item.title}-${index}`} project={item}/>
